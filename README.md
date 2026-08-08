@@ -10,8 +10,8 @@ Netrek is a multi-player battle simulation with a Star Trek theme. As a player, 
 
 ### Dependencies
 
-libgmp
-libz
+gmp
+zlib
 sdl
 sdl-mixer
 pdcurses
@@ -25,15 +25,25 @@ View the [Netrek.org](https://www.netrek.org/) website
 
 * It is best to configure your own netrekrc file. The file is heavily commented but more information can be found in the [COW Reference Manual](https://www.netrek.org/clueguides/cowdocs/cow1998.html)
 * Visit the [Netrek Newbie Manual](https://www.netrek.org/beginner/newbie.php) for information on game play.
+# Run standard
 ```
 netrek.exe
 ```
+# Run with specified netrekrc file
+```
+netrek.exe -r netrerc
+```
+# Use specific server
+```
+netrek.exe -h 192.168.1.1
+```
+
 
 ## Help
 
 Command Line Options
 ```
-Summary of command line options available for COW:
+Summary of command line options available:
 u       (existance) prints usage information for the client
 
 C       (string of chars) name to auto-login with
@@ -87,10 +97,10 @@ v       (existance) display version/expiration info then exit
 
 Contributors names and contact info
 
-1998 Steve Sheldon (sheldon@visi.com)
-2002 Stas Pirogov (keyos@keyos.org)
-2009 Bill Balcerski
-2026 Michael Wyatt (internetworker911@gmail.com)
+* 1998 Steve Sheldon (sheldon@visi.com)
+* 2002 Stas Pirogov (keyos@keyos.org)
+* 2009 Bill Balcerski
+* 2026 Michael Wyatt (internetworker911@gmail.com)
 
 ## Version History
 
