@@ -24,7 +24,7 @@ View the [Netrek.org](https://www.netrek.org/) website
 ### Executing program
 
 * It is best to configure your own netrekrc file. The file is heavily commented but more information can be found in the [COW Reference Manual](https://www.netrek.org/clueguides/cowdocs/cow1998.html)
-* Visit the [Netrek Newbie Manual](https://www.netrek.org/beginner/newbie.php) for information on game play.
+* Visit the [Netrek Newbie Manual](https://www.netrek.org/beginner/newbie.php) for information on game play.  
 Standard:
 ```
 netrek.exe
