@@ -25,15 +25,15 @@ View the [Netrek.org](https://www.netrek.org/) website
 
 * It is best to configure your own netrekrc file. The file is heavily commented but more information can be found in the [COW Reference Manual](https://www.netrek.org/clueguides/cowdocs/cow1998.html)
 * Visit the [Netrek Newbie Manual](https://www.netrek.org/beginner/newbie.php) for information on game play.
-# Run standard
+Standard:
 ```
 netrek.exe
 ```
-# Run with specified netrekrc file
+Specified netrekrc file
 ```
 netrek.exe -r netrerc
 ```
-# Use specific server
+Use specific server
 ```
 netrek.exe -h 192.168.1.1
 ```
