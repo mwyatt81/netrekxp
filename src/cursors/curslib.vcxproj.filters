@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="cursors">
+      <UniqueIdentifier>{20089fa0-ad5b-457c-b504-f9ac15b70555}</UniqueIdentifier>
+      <Extensions>.cur</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cursors\cross.cur">
+      <Filter>cursors</Filter>
+    </None>
+    <None Include="cursors\fed.cur">
+      <Filter>cursors</Filter>
+    </None>
+    <None Include="cursors\kli.cur">
+      <Filter>cursors</Filter>
+    </None>
+    <None Include="cursors\loc.cur">
+      <Filter>cursors</Filter>
+    </None>
+    <None Include="cursors\map.cur">
+      <Filter>cursors</Filter>
+    </None>
+    <None Include="cursors\ori.cur">
+      <Filter>cursors</Filter>
+    </None>
+    <None Include="cursors\rom.cur">
+      <Filter>cursors</Filter>
+    </None>
+    <None Include="cursors\trek.cur">
+      <Filter>cursors</Filter>
+    </None>
+    <None Include="cursors\warn.cur">
+      <Filter>cursors</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="curslib.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="curslib.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+</Project>

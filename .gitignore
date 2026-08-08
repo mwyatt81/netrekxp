@@ -1,0 +1,5 @@
+vcpkg_installed/*
+dist/*
+Backup/*
+.vs/*
+.git/*

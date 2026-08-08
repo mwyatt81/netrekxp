@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{15827e5a-80b0-489c-919d-e563c3aa0f0e}</UniqueIdentifier>
+      <Extensions>c</Extensions>
+    </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{592f70eb-360b-4f6a-a0d7-07ffaebe6ae5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{a4be2078-b8af-49f0-961c-5f86c76bd7dd}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\beeplite.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\check.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\colors.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\console.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cowmain.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dashboard.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dashboard3.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\data.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\death.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defaults.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defwin.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\distress.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dmessage.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\docwin.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\enter.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\feature.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\findslot.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\getname.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\getship.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\helpwin.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hintwin.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\inform.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\interface.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\local.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\macrowin.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\map.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mswindow.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\newwin.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\option.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parsemeta.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ping.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pingstats.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\planetlist.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\playback.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\playerlist.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\random.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ranklist.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\redraw.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\reserved.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rotate.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rsa_box.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rsa_box_0.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rsa_box_1.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rsa_box_2.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rsa_box_3.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rsa_box_4.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\senddist.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\short.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sintab.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\smessage.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\socket.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sound.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spopt.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stats.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\string_util.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tools.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\udpopt.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\war.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\warning.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\winmain.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="win32\config.h">
+      <Filter>config</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bitmaps.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\copyright.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\copyright2.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cowapi.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cursors.H">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\data.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\defs.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\local.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\map.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oldbitmaps.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\packets.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\parsemeta.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\playerlist.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\proto.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sound.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\spopt.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\string_util.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\struct.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tngbitmaps.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\version.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wlib.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wtext.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xclrs.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\vccnetrek.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\main.ico" />
+  </ItemGroup>
+</Project>

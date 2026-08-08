@@ -1,0 +1,7 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  winkey.cpp
+C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(1424,5): warning MSB8012: TargetPath(C:\Users\mike\source\repos\netrekxp\src\winkey\dist\debug\tmp\winkey\Debug\winkey.dll) does not match the Linker's OutputFile property value (C:\Users\mike\source\repos\netrekxp\src\winkey\dist\debug\tmp\winkey\Debug\bitmaps\winkey.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     Creating library dist\debug\tmp\winkey\Debug\winkey.lib and object dist\debug\tmp\winkey\Debug\winkey.exp
+  winkey.vcxproj -> C:\Users\mike\source\repos\netrekxp\src\winkey\dist\debug\tmp\winkey\Debug\winkey.dll
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

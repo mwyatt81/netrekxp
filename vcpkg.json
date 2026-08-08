@@ -1,0 +1,22 @@
+{
+  "dependencies": [
+    "gmp",
+    "sdl1",
+    "sdl1-mixer",
+    "sdl2",
+    "sdl2-gfx",
+    "sdl2-image",
+    "sdl2-mixer",
+    "sdl2-ttf",
+    {
+      "name": "sdl2pp",
+      "features": [
+        "sdl2-image",
+        "sdl2-mixer",
+        "sdl2-ttf"
+      ]
+    },
+    "zlib",
+    "pdcurses"
+  ]
+}
