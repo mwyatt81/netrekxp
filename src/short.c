@@ -2013,6 +2013,7 @@ handleVPhaser (unsigned char *sbuf)
     status = packet->status & 0x0f;
     pnum = packet->pnum & 0x3f;
     weaponUpdate = 1;
+    /* Phaser use kept crashing, setting these to those in the default case below */
     x = SCALE * (ntohs(packet->x));
     y = SCALE * (ntohs(packet->y));
     target = packet->target & 0x3f;
