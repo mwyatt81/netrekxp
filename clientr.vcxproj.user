@@ -2,7 +2,12 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommandArguments>-h 192.168.1.100</LocalDebuggerCommandArguments>
-    <LocalDebuggerCommandArgumentsHistory>-h 192.168.1.100|</LocalDebuggerCommandArgumentsHistory>
+    <LocalDebuggerCommandArguments>-h 192.168.1.100 -r F:\Netrek\netrekrc</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArgumentsHistory>-h 192.168.1.100|-h 192.168.1.100 -r F:\Netrek\netrekrc|</LocalDebuggerCommandArgumentsHistory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LocalDebuggerCommandArguments>-h 192.168.1.100 -r F:\Netrek\netrekrc</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArgumentsHistory>-h 192.168.1.100 -r F:\Netrek\netrekrc|</LocalDebuggerCommandArgumentsHistory>
   </PropertyGroup>
 </Project>
