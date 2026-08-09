@@ -1,6 +1,7 @@
 {
   "dependencies": [
     "gmp",
+    "pdcurses",
     "sdl1",
     "sdl1-mixer",
     "sdl2",
@@ -17,6 +18,6 @@
       ]
     },
     "zlib",
-    "pdcurses"
+    "libmikmod"
   ]
 }
