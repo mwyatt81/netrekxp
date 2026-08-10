@@ -50,8 +50,8 @@
     <OutDir>dist\debug\</OutDir>
     <IntDir>dist\debug\src\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);C:\Users\mike\source\repos\zlib\zlib-win-build\distfiles\zlib-1.3.2;C:\Users\mike\source\repos\netrekxp\vcpkg_installed\x86-windows\x86-windows\lib</LibraryPath>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\mike\source\repos\netrekxp\vcpkg_installed\x86-windows\x86-windows\include;</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <ExcludePath>$(CommonExcludePath);$(VC_ExecutablePath_x86);$(VC_LibraryPath_x86)</ExcludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -59,8 +59,8 @@
     <IntDir>dist\release\src\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <TargetName>netrek</TargetName>
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);C:\Users\mike\source\repos\zlib\zlib-win-build\distfiles\zlib-1.3.2;C:\Users\mike\source\repos\netrekxp\vcpkg_installed\x86-windows\x86-windows\lib</LibraryPath>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\mike\source\repos\netrekxp\vcpkg_installed\x86-windows\x86-windows\include;</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <ExcludePath>$(CommonExcludePath);$(VC_ExecutablePath_x86);$(VC_LibraryPath_x86)</ExcludePath>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg">
@@ -76,7 +76,7 @@
 /D "_CRT_NONSTDC_NO_DEPRECATE" %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <WholeProgramOptimization>false</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>win32;win32\h;src;include;vcpkg_installed\x86-windows\x86-windows\include\SDL2</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>win32;win32\h;src;include;vcpkg_installed\x86-windows\x86-windows\include;vcpkg_installed\x86-windows\x86-windows\include\SDL2</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;RSA;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -101,16 +101,18 @@
     <Link>
       <AdditionalOptions>/mapinfo:exports
  %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>libcmt.lib;wsock32.lib;winmm.lib;mpr.lib;vcruntime.lib;msvcrtd.lib;libgmp.lib;msimg32.lib;SDL.lib;SDL_mixer.lib;z.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcmt.lib;wsock32.lib;winmm.lib;mpr.lib;vcruntime.lib;msvcrtd.lib;msimg32.lib;libgmp.lib;SDL2.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>dist\debug\clientr.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>win32\lib;win32\lib\VCC;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>win32\lib;win32\lib\VCC;%(AdditionalLibraryDirectories);vcpkg_installed\x86-windows\x86-windows\lib</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>dist\debug\src\netrek.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -137,7 +139,7 @@
 /D "_CRT_NONSTDC_NO_DEPRECATE" %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>win32;win32\h;src;include;vcpkg_installed\x86-windows\x86-windows\include;vcpkg_installed\x86-windows\x86-windows\include\SDL2;vcpkg_installed\x86-windows\x86-windows\include\SDL;vcpkg_installed\x86-windows\x86-windows\include\wavpack;vcpkg_installed\x86-windows\x86-windows\include\vorbis;vcpkg_installed\x86-windows\x86-windows\include\ogg;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>win32;win32\h;src;include;vcpkg_installed\x86-windows\x86-windows\include;vcpkg_installed\x86-windows\x86-windows\include\SDL2</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;RSA;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -156,7 +158,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAs>Default</CompileAs>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <UndefinePreprocessorDefinitions>_DEBUG</UndefinePreprocessorDefinitions>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -164,10 +167,10 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/mapinfo:exports %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>libcmt.lib;wsock32.lib;winmm.lib;mpr.lib;vcruntime.lib;msvcrtd.lib;msimg32.lib;libgmp.lib;mikmod.lib;SDL.lib;SDL_mixer.lib;z.lib;wavpackdll.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;SDL2.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcmt.lib;wsock32.lib;winmm.lib;mpr.lib;vcruntime.lib;msvcrtd.lib;msimg32.lib;libgmp.lib;SDL2.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>dist\release\netrek.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>win32\lib;win32\lib\VCC;%(AdditionalLibraryDirectories);C:\Users\mike\source\repos\netrekxp\vcpkg_installed\x86-windows\x86-windows\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>win32\lib;win32\lib\VCC;%(AdditionalLibraryDirectories);vcpkg_installed\x86-windows\x86-windows\lib</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <EmbedManagedResourceFile>main.ico;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -407,6 +410,22 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="src\vccnetrek.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vcpkg_installed\x86-windows\x86-windows\bin\mikmod.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="vcpkg_installed\x86-windows\x86-windows\bin\SDL.dll" />
+    <None Include="vcpkg_installed\x86-windows\x86-windows\bin\SDL2_mixer.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="vcpkg_installed\x86-windows\x86-windows\bin\SDL_mixer.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="vcpkg_installed\x86-windows\x86-windows\bin\z.dll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

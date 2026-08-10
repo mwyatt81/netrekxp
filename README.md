@@ -8,16 +8,6 @@ Netrek is a multi-player battle simulation with a Star Trek theme. As a player, 
 
 ## Getting Started
 
-### Dependencies
-
-gmp
-zlib
-sdl
-sdl-mixer
-pdcurses
-
-### Installing
-
 View the [Netrek.org](https://www.netrek.org/) website
 * Binaries are located in the 'releases' section
 
