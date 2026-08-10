@@ -2,7 +2,7 @@ This source tree was tested with Microsoft Visual Studio 2026
 
 Step 1:
 --------
-Use the clientr.sln file to open the solution
+Use the clientr.sln file to open the solution.
 
 Step 1a:
 --------
@@ -14,6 +14,9 @@ Step 2:
 Several dependencies are setup via vcpkg. The json file should be available and a
 vcpkg install should download and build the packages. The x86 packages are currently
 being used for this application.
+
+set VCPKG_DEFAULT_TRIPLET=x86-windows
+vcpkg install
 
 Step 3:
 --------
