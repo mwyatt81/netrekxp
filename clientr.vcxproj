@@ -417,22 +417,6 @@
   <ItemGroup>
     <ResourceCompile Include="src\vccnetrek.rc" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="vcpkg_installed\x86-windows\x86-windows\bin\mikmod.dll">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
-    <None Include="vcpkg_installed\x86-windows\x86-windows\bin\SDL.dll" />
-    <None Include="vcpkg_installed\x86-windows\x86-windows\bin\SDL2_mixer.dll">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
-    <None Include="vcpkg_installed\x86-windows\x86-windows\bin\SDL_mixer.dll">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
-    <None Include="vcpkg_installed\x86-windows\x86-windows\bin\z.dll">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-      <DeploymentContent>true</DeploymentContent>
-    </None>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

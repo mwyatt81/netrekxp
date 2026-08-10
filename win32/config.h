@@ -20,7 +20,7 @@
 ################################################################################
 */
 
-#define CBUGS "Send bugs/suggestions to: billbalcerski@hotmail.com"
+#define CBUGS "Send bugs/suggestions to: internetworker911@gmail.com"
 
 /* 
 ################################################################################

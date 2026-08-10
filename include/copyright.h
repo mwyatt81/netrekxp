@@ -39,4 +39,16 @@
  * Netrek XP Mod
  * Stas Pirogov (keyos@keyos.org)
  *
+ * ----------------------------------------------------------- Copyright 2009 
+ * As above
+ *
+ * Netrek XP 2009
+ * billbalcerski@gmail.com
+ * 
+ * * ----------------------------------------------------------- Copyright 2026
+ * As above
+ *
+ * Netrek XP 2026
+ * internetworker911@gmail.com
+ *
  */

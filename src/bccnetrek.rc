@@ -9,12 +9,12 @@ FILETYPE VFT_APP
 {  BLOCK "040904E4" 
  {
    VALUE "CompanyName", "Netrek\000"
-   VALUE "FileDescription", "Netrek XP 2009 Client\000"
+   VALUE "FileDescription", "Netrek XP 2026 Client\000"
    VALUE "FileVersion", "123456789012345678901234567890\000"
-   VALUE "InternalName", "Netrek XP 2009\000"
-   VALUE "LegalCopyright", "Copyright © 1986-2009\000"
+   VALUE "InternalName", "Netrek XP 2026\000"
+   VALUE "LegalCopyright", "Copyright © 1986-2026\000"
    VALUE "OriginalFilename", "netrek.rc\000"
-   VALUE "ProductName", "Netrek XP 2009 Client\000"
+   VALUE "ProductName", "Netrek XP 2026 Client\000"
    VALUE "ProductVersion", "123456789012345678901234567890\000" 
  }
  }

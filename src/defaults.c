@@ -1713,7 +1713,7 @@ resetdefaults (void)
     char tmp[100];
 
     if (strlen (pigcall) == 0)
-        sprintf (pigcall, "Netrek XP 2009 (%s) - the smarter netrek eXPerience!", mvers);
+        sprintf (pigcall, "Netrek XP 2026 (%s) - the smarter netrek eXPerience!", mvers);
 
     timerType = intDefault ("timerType", timerType);
     if (timerType < T_NONE || timerType >= T_TOTAL)
