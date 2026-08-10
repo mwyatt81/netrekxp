@@ -1,12 +1,5 @@
 vcpkg_installed/*
 dist/*
-Backup/*
 .vs/*
 .git/*
-build.cmd
-clientr.dsp
-clientr.dsw
-clientr.vcproj
-UpgradeLog.htm
-slnbck-1.zip
 removing/*
