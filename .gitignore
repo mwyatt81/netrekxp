@@ -3,3 +3,5 @@ dist/*
 .vs/*
 .git/*
 removing/*
+todo.txt
+src/rsa_box*
