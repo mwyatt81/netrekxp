@@ -101,7 +101,7 @@
     <Link>
       <AdditionalOptions>/mapinfo:exports
  %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>libcmt.lib;wsock32.lib;winmm.lib;mpr.lib;vcruntime.lib;msvcrtd.lib;msimg32.lib;libgmp.lib;SDL2.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcmt.lib;wsock32.lib;winmm.lib;mpr.lib;vcruntime.lib;msvcrtd.lib;msimg32.lib;libgmp.lib;mikmod.lib;modplug.lib;libxmp.lib;out123.lib;syn123.lib;ogg.lib;mpg123.lib;SDL2.lib;SDL2_mixer.lib;vorbis.lib;vorbisfile.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>dist\debug\clientr.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>win32\lib;win32\lib\VCC;%(AdditionalLibraryDirectories);vcpkg_installed\x86-windows\x86-windows\lib</AdditionalLibraryDirectories>

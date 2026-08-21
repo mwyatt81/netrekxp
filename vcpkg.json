@@ -2,19 +2,25 @@
   "dependencies": [
     "gmp",
     "pdcurses",
+	 "libmikmod",
+    "libvorbis",
     "sdl1",
-    "sdl1-mixer",
+    "sdl1-mixer",	 
     "sdl2",
-    "sdl2-gfx",
-    "sdl2-image",
-    "sdl2-mixer",
-    "sdl2-ttf",
     {
-      "name": "sdl2pp",
+      "name": "sdl2-mixer",
       "features": [
-        "sdl2-image",
-        "sdl2-mixer",
-        "sdl2-ttf"
+        "libmodplug",
+        "mpg123",
+        "opusfile",
+        "wavpack"
+      ]
+    },
+    {
+      "name": "sdl2-mixer-ext",
+      "features": [
+        "libflac",
+        "libvorbis"
       ]
     },
     "zlib",

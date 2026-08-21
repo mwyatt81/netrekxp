@@ -24,6 +24,10 @@
 #include "SDL.h"
 #include "SDL_mixer.h"
 #include "bitmaps.h"
+#ifdef SOUND
+#include "sound.h"  //Needing the enumerators for adding sounds
+int selsound;
+#endif
 
 /* Local Variables */
 #define XPI     3.1415926
@@ -925,11 +929,29 @@ DrawShips (void)
                     if ( isMe(j) ? ((!paradise && (me->p_flags & PFTWARP)) ? 0 : 1) : 1 )
                     {
                     	SetDistAngle(dx / scaleFactor + TWINSIDE / 2, dy / scaleFactor + TWINSIDE / 2);   
+                        
+                        /* Cloak */
+                        selsound = CLOAKED_WAV;
+                        switch (j->p_team) {
+                        case FED:
+                            selsound = CLOAKED_FED_WAV;
+                            break;
+                        case ROM:
+                            selsound = CLOAKED_ROM_WAV;
+                            break;
+                        case KLI:
+                            selsound = CLOAKED_KLI_WAV;
+                            break;
+                        case ORI:
+                            selsound = CLOAKED_ORI_WAV;
+                            break;
+                        }
+
                         // At short distances, don't use angular sound
                         if (!soundAngles || distance < SCALE/2)
-                            Play_Sound_Loc(CLOAKED_WAV, SF_CLOAKING, -1, distance);
+                            Play_Sound_Loc(selsound, SF_CLOAKING, -1, distance);
                         else
-                            Play_Sound_Loc(CLOAKED_WAV, SF_CLOAKING, angle, distance);
+                            Play_Sound_Loc(selsound, SF_CLOAKING, angle, distance);
                     }
                 }
 #endif
@@ -950,11 +972,29 @@ DrawShips (void)
                     if (j->p_cloakphase == (cloak_phases - 1) && dx <= view && dx >= -view && dy <= view && dy >= -view)
                     {
                         SetDistAngle(dx / scaleFactor + TWINSIDE / 2, dy / scaleFactor + TWINSIDE / 2);
+
+                        /* Uncloak */
+                        selsound = UNCLOAK_WAV;
+                        switch (j->p_team) {
+                        case FED:
+                            selsound = UNCLOAKED_FED_WAV;
+                            break;
+                        case ROM:
+                            selsound = UNCLOAKED_ROM_WAV;
+                            break;
+                        case KLI:
+                            selsound = UNCLOAKED_KLI_WAV;
+                            break;
+                        case ORI:
+                            selsound = UNCLOAKED_ORI_WAV;
+                            break;
+                        }
+                        
                         // At short distances, don't use angular sound
                         if (!soundAngles || distance < SCALE/2)
-                            Play_Sound_Loc(UNCLOAK_WAV, SF_CLOAKING, -1, distance);
+                            Play_Sound_Loc(selsound, SF_CLOAKING, -1, distance);
                         else
-                            Play_Sound_Loc(UNCLOAK_WAV, SF_CLOAKING, angle, distance);
+                            Play_Sound_Loc(selsound, SF_CLOAKING, angle, distance);
                     }
                     else    // Kill any channels with CLOAKED_WAV on them (group 1)
                         Mix_HaltGroup(1);
@@ -1273,15 +1313,45 @@ DrawShips (void)
             {
                 if ((sound_flags & PFSHIELD) && !(j->p_flags & PFSHIELD))
                 {
-                    // Kill any channels with SHIELD_UP/DOWN_WAV on them (group 4)
-                    Mix_HaltGroup(4);
-                    Play_Sound(SHIELD_DOWN_WAV, SF_SHIELD);
+                    Mix_HaltGroup(4);   // Kill any channels with SHIELD_UP/DOWN_WAV on them (group 4)
+                    /* Shield Down */
+                    selsound = SHIELD_DOWN_WAV;
+                    switch (j->p_team) {
+                    case FED:
+                        selsound = SHIELD_DOWN_FED_WAV;
+                        break;
+                    case ROM:
+                        selsound = SHIELD_DOWN_ROM_WAV;
+                        break;
+                    case KLI:
+                        selsound = SHIELD_DOWN_KLI_WAV;
+                        break;
+                    case ORI:
+                        selsound = SHIELD_DOWN_ORI_WAV;
+                        break;
+                    }
+                    Play_Sound(selsound, SF_SHIELD);
                 }
                 if (!(sound_flags & PFSHIELD) && (j->p_flags & PFSHIELD))
                 {
-                    // Kill any channels with SHIELD_UP/DOWN_WAV on them (group 4)
-                    Mix_HaltGroup(4);
-                    Play_Sound(SHIELD_UP_WAV, SF_SHIELD);
+                    Mix_HaltGroup(4);   // Kill any channels with SHIELD_UP/DOWN_WAV on them (group 4)
+                    /* Shield Up */
+                    selsound = SHIELD_UP_WAV;
+                    switch (j->p_team) {
+                    case FED:
+                        selsound = SHIELD_UP_FED_WAV;
+                        break;
+                    case ROM:
+                        selsound = SHIELD_UP_ROM_WAV;
+                        break;
+                    case KLI:
+                        selsound = SHIELD_UP_KLI_WAV;
+                        break;
+                    case ORI:
+                        selsound = SHIELD_UP_ORI_WAV;
+                        break;
+                    }
+                    Play_Sound(selsound, SF_SHIELD);
                 }
             }
 #endif
@@ -1753,7 +1823,24 @@ DrawShips (void)
             if (php->sound_phaser)
             {           
                 if (isMe(j))
-                    Play_Sound(PHASER_WAV, SF_WEAPONS);
+                {
+                    selsound = PHASER_WAV;
+                    switch (j->p_team) {
+                    case FED:
+                        selsound = PHASER_FED_WAV;
+                        break;
+                    case ROM:
+                        selsound = PHASER_ROM_WAV;
+                        break;
+                    case KLI:
+                        selsound = PHASER_KLI_WAV;
+                        break;
+                    case ORI:
+                        selsound = PHASER_ORI_WAV;
+                        break;
+                    }
+                    Play_Sound(selsound, SF_WEAPONS);
+                }
                 else
                 {
                     SetDistAngle(dx, dy);
@@ -3185,9 +3272,25 @@ DrawMisc (void)
             W_ChangeBorder (baseWin, yColor);
 
 #if defined(SOUND)
-            // Kill any channels with RED_ALERT_WAV (group 2)
-            Mix_HaltGroup(2);
-            Play_Sound(WARNING_WAV, SF_ALERT);
+            Mix_HaltGroup(2);   // Kill any channels with RED_ALERT_WAV (group 2)
+            /* Warning */
+            selsound = WARNING_WAV;
+            switch (me->p_team) {
+            case FED:
+                selsound = WARNING_FED_WAV;
+                break;
+            case ROM:
+                selsound = WARNING_ROM_WAV;
+                break;
+            case KLI:
+                selsound = WARNING_KLI_WAV;
+                break;
+            case ORI:
+                selsound = WARNING_ORI_WAV;
+                break;
+            }
+            Play_Sound(selsound, SF_ALERT);
+            
 #endif
 
             break;
@@ -3203,7 +3306,22 @@ DrawMisc (void)
             W_ChangeBorder (baseWin, rColor);
             
 #if defined(SOUND)
-            Play_Sound(RED_ALERT_WAV, SF_ALERT);
+            selsound = RED_ALERT_WAV;
+            switch (me->p_team) {
+            case FED:
+                selsound = RED_ALERT_FED_WAV;
+                break;
+            case ROM:
+                selsound = RED_ALERT_ROM_WAV;
+                break;
+            case KLI:
+                selsound = RED_ALERT_KLI_WAV;
+                break;
+            case ORI:
+                selsound = RED_ALERT_ORI_WAV;
+                break;
+            }
+            Play_Sound(selsound, SF_ALERT);
 #endif
 
             break;
@@ -3228,7 +3346,24 @@ DrawMisc (void)
 
 #if defined(SOUND)
     if (sound_torps < me->p_ntorp)
-        Play_Sound(FIRE_TORP_WAV, SF_WEAPONS);
+    {
+        selsound = FIRE_TORP_WAV;
+        switch (me->p_team) {
+        case FED:
+            selsound = FIRE_TORP_FED_WAV;
+            break;
+        case ROM:
+            selsound = FIRE_TORP_ROM_WAV;
+            break;
+        case KLI:
+            selsound = FIRE_TORP_KLI_WAV;
+            break;
+        case ORI:
+            selsound = FIRE_TORP_ORI_WAV;
+            break;
+        }
+        Play_Sound(selsound, SF_WEAPONS);
+    }
     if (sound_other_torps < num_other_torps)
     {
         if (!soundAngles || other_torp_dist < SCALE/2)

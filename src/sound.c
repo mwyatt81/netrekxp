@@ -40,6 +40,8 @@ static char sound_prefix[PATH_MAX];
    told what volume to use */
 static int mvolume = 0;
 static int volume = 0;
+/* Setting initial */
+static int musicVolume = 75; //0 - 128
 
 char *DATAFILE(const char* wav) {    
     strcpy(sound_prefix, sounddir);
@@ -88,6 +90,38 @@ int loadSounds(void) {
   sounds[FIRE_PLASMA_OTHER_WAV] = Mix_LoadWAV(DATAFILE("nt_fire_plasma_other.wav"));
   sounds[FIRE_TORP_OTHER_WAV] = Mix_LoadWAV(DATAFILE("nt_fire_torp_other.wav"));
   sounds[PHASER_OTHER_WAV] = Mix_LoadWAV(DATAFILE("nt_phaser_other.wav"));
+  sounds[FIRE_TORP_FED_WAV] = Mix_LoadWAV(DATAFILE("nt_fire_torp_fed.wav"));
+  sounds[FIRE_TORP_ROM_WAV] = Mix_LoadWAV(DATAFILE("nt_fire_torp_rom.wav"));
+  sounds[FIRE_TORP_KLI_WAV] = Mix_LoadWAV(DATAFILE("nt_fire_torp_kli.wav"));
+  sounds[FIRE_TORP_ORI_WAV] = Mix_LoadWAV(DATAFILE("nt_fire_torp_ori.wav"));
+  sounds[PHASER_FED_WAV] = Mix_LoadWAV(DATAFILE("nt_phaser_fed.wav"));
+  sounds[PHASER_ROM_WAV] = Mix_LoadWAV(DATAFILE("nt_phaser_rom.wav"));
+  sounds[PHASER_KLI_WAV] = Mix_LoadWAV(DATAFILE("nt_phaser_kli.wav"));
+  sounds[PHASER_ORI_WAV] = Mix_LoadWAV(DATAFILE("nt_phaser_ori.wav"));
+  sounds[RED_ALERT_FED_WAV] = Mix_LoadWAV(DATAFILE("nt_red_alert_fed.wav"));
+  sounds[RED_ALERT_ROM_WAV] = Mix_LoadWAV(DATAFILE("nt_red_alert_rom.wav"));
+  sounds[RED_ALERT_KLI_WAV] = Mix_LoadWAV(DATAFILE("nt_red_alert_kli.wav"));
+  sounds[RED_ALERT_ORI_WAV] = Mix_LoadWAV(DATAFILE("nt_red_alert_ori.wav"));
+  sounds[WARNING_FED_WAV] = Mix_LoadWAV(DATAFILE("nt_warning_fed.wav"));
+  sounds[WARNING_ROM_WAV] = Mix_LoadWAV(DATAFILE("nt_warning_rom.wav"));
+  sounds[WARNING_KLI_WAV] = Mix_LoadWAV(DATAFILE("nt_warning_kli.wav"));
+  sounds[WARNING_ORI_WAV] = Mix_LoadWAV(DATAFILE("nt_warning_ori.wav"));    
+  sounds[SHIELD_UP_FED_WAV] = Mix_LoadWAV(DATAFILE("nt_shield_up_fed.wav"));
+  sounds[SHIELD_UP_ROM_WAV] = Mix_LoadWAV(DATAFILE("nt_shield_up_rom.wav"));
+  sounds[SHIELD_UP_KLI_WAV] = Mix_LoadWAV(DATAFILE("nt_shield_up_kli.wav"));
+  sounds[SHIELD_UP_ORI_WAV] = Mix_LoadWAV(DATAFILE("nt_shield_up_ori.wav"));
+  sounds[SHIELD_DOWN_FED_WAV] = Mix_LoadWAV(DATAFILE("nt_shield_down_fed.wav"));
+  sounds[SHIELD_DOWN_ROM_WAV] = Mix_LoadWAV(DATAFILE("nt_shield_down_rom.wav"));
+  sounds[SHIELD_DOWN_KLI_WAV] = Mix_LoadWAV(DATAFILE("nt_shield_down_kli.wav"));
+  sounds[SHIELD_DOWN_ORI_WAV] = Mix_LoadWAV(DATAFILE("nt_shield_down_ori.wav"));  
+  sounds[CLOAKED_FED_WAV] = Mix_LoadWAV(DATAFILE("nt_cloaked_fed.wav"));
+  sounds[CLOAKED_ROM_WAV] = Mix_LoadWAV(DATAFILE("nt_cloaked_rom.wav"));
+  sounds[CLOAKED_KLI_WAV] = Mix_LoadWAV(DATAFILE("nt_cloaked_kli.wav"));
+  sounds[CLOAKED_ORI_WAV] = Mix_LoadWAV(DATAFILE("nt_cloaked_ori.wav"));
+  sounds[UNCLOAKED_FED_WAV] = Mix_LoadWAV(DATAFILE("nt_uncloak_fed.wav"));
+  sounds[UNCLOAKED_ROM_WAV] = Mix_LoadWAV(DATAFILE("nt_uncloak_rom.wav"));
+  sounds[UNCLOAKED_KLI_WAV] = Mix_LoadWAV(DATAFILE("nt_uncloak_kli.wav"));
+  sounds[UNCLOAKED_ORI_WAV] = Mix_LoadWAV(DATAFILE("nt_uncloak_ori.wav"));
 
   for (i=0; i < NUM_WAVES; i++) {
     if (!sounds[i]) {
@@ -105,15 +139,30 @@ int loadSounds(void) {
 int loadMusic(void) {
   int i;
 
-  music[INTRO1_MUSIC] = Mix_LoadMUS(DATAFILE("intro_theme_TOS.ogg"));
+  music[BGK_01_MUSIC] = Mix_LoadMUS(DATAFILE("geoffharvey-andromeda-extended.mp3"));
+  music[BGK_02_MUSIC] = Mix_LoadMUS(DATAFILE("ambience-tng_room.mp3"));
+  music[BGK_03_MUSIC] = Mix_LoadMUS(DATAFILE("ambience-tng_sickbay.mp3"));
+  music[BGK_04_MUSIC] = Mix_LoadMUS(DATAFILE("ambience-voy_bridge.mp3"));
+  music[BGK_05_MUSIC] = Mix_LoadMUS(DATAFILE("ambience-voy_relativity_bridge.mp3"));
+  music[BGK_06_MUSIC] = Mix_LoadMUS(DATAFILE("geoffharvey-andromeda-extended.mp3"));
+  music[BGK_07_MUSIC] = Mix_LoadMUS(DATAFILE("geoffharvey-galactic-contact.mp3"));
+  music[BGK_08_MUSIC] = Mix_LoadMUS(DATAFILE("geoffharvey-planetarium.mp3"));
+  music[BGK_09_MUSIC] = Mix_LoadMUS(DATAFILE("geoffharvey-starfleet-command.mp3"));
+  music[BGK_10_MUSIC] = Mix_LoadMUS(DATAFILE("harumachimusic-flare-star.mp3"));
+  music[BGK_11_MUSIC] = Mix_LoadMUS(DATAFILE("leberch-space-ambient.mp3"));
+  music[BGK_12_MUSIC] = Mix_LoadMUS(DATAFILE("leberch-space.mp3"));
+  music[BGK_13_MUSIC] = Mix_LoadMUS(DATAFILE("playstarz_music-space-ambient.mp3"));
+  music[BGK_14_MUSIC] = Mix_LoadMUS(DATAFILE("ambience-bridge.mp3"));
+  music[END1_MUSIC] = Mix_LoadMUS(DATAFILE("end_theme_TOS.ogg"));
+  /*music[INTRO1_MUSIC] = Mix_LoadMUS(DATAFILE("intro_theme_TOS.ogg"));
   music[INTRO2_MUSIC] = Mix_LoadMUS(DATAFILE("intro_theme_TNG.ogg"));
   music[INTRO3_MUSIC] = Mix_LoadMUS(DATAFILE("intro_theme_VOY.ogg"));
   music[INTRO4_MUSIC] = Mix_LoadMUS(DATAFILE("intro_theme_DS9.ogg"));
   music[INTRO5_MUSIC] = Mix_LoadMUS(DATAFILE("intro_theme_ST2.ogg"));
-  music[END1_MUSIC] = Mix_LoadMUS(DATAFILE("end_theme_TOS.ogg"));
   music[END2_MUSIC] = Mix_LoadMUS(DATAFILE("end_theme_TNG.ogg"));
   music[END3_MUSIC] = Mix_LoadMUS(DATAFILE("end_theme_VOY.ogg"));
-  music[END4_MUSIC] = Mix_LoadMUS(DATAFILE("end_theme_DS9.ogg"));
+  music[END4_MUSIC] = Mix_LoadMUS(DATAFILE("end_theme_DS9.ogg"));*/
+
 
   for (i=0; i < NUM_MUSIC; i++) {
     if (!music[i]) {
@@ -174,17 +223,21 @@ extern void Init_Sound (void)
         atexit(sound_cleanup);
 
         /* Open the audio device at 22050 Hz 8 bit Microsoft PCM with stereo */
-        if (Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 1024) < 0)
+        if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 1024) < 0)
         {
             LineToConsole("Mix_OpenAudio: %s\n", Mix_GetError());
             sound_init = 0;
             return;
         }
 
+        
+
         /* Set sound and music volume */
         mvolume = volume = soundVolume;
         Mix_Volume(-1, volume);
-        Mix_VolumeMusic(mvolume);
+        /*mvolume = MIX_MAX_VOLUME / 2;
+        Mix_VolumeMusic(mvolume);*/
+        Mix_VolumeMusic(musicVolume);
 
         /* Set sound flags */
         Init_sound_flags();
@@ -270,7 +323,7 @@ extern void Play_Sound (int type, u_int flag)
  
     if ((type >= NUM_WAVES) || (type < 0))
     {
-        LineToConsole("Invalid sound type %d\n", type);
+        LineToConsole("Invalid sound type %d vs %d  275\n", type, NUM_WAVES); //clean
         return;
     }
 
@@ -301,7 +354,7 @@ extern void Play_Sound_Loc (int type, u_int flag, int angle, int distance)
 
     if ((type >= NUM_WAVES) || (type < 0))
     {
-        LineToConsole("Invalid sound type %d\n", type);
+        LineToConsole("Invalid sound type %d vs %d  306\n", type, NUM_WAVES); //clean
         return;
     }
 
@@ -373,7 +426,6 @@ extern void Play_Music_Bkgd (void)
         return;
 
     i = RANDOM() % NUM_MUSIC;
-
     if (Mix_PlayMusic(music[i], 1) < 0)
     {
         LineToConsole("Mix_PlayMusic: %s\n", Mix_GetError());
@@ -394,12 +446,28 @@ void Group_Sound (int type, int channel)
     // group 4 = shield_down_wav and shield_up_wav
     switch(type)
     {
-    	case CLOAKED_WAV:
+    	case CLOAKED_WAV:   /* Cloaked */
+        case CLOAKED_FED_WAV:
+        case CLOAKED_ROM_WAV:
+        case CLOAKED_KLI_WAV:
+        case CLOAKED_ORI_WAV:
             if(!Mix_GroupChannel(channel,1))
                 LineToConsole("Mix_GroupChannel: %s\n", Mix_GetError());
             break;
+
         case WARNING_WAV:
+        case WARNING_FED_WAV:
+        case WARNING_ROM_WAV:
+        case WARNING_KLI_WAV:
+        case WARNING_ORI_WAV:
+            if (!Mix_GroupChannel(channel, 2))
+                LineToConsole("Mix_GroupChannel: %s\n", Mix_GetError());
+            break;
         case RED_ALERT_WAV:
+        case RED_ALERT_FED_WAV:
+        case RED_ALERT_ROM_WAV:
+        case RED_ALERT_KLI_WAV:
+        case RED_ALERT_ORI_WAV:
             if(!Mix_GroupChannel(channel,2))
                 LineToConsole("Mix_GroupChannel: %s\n", Mix_GetError());
             break;
@@ -410,6 +478,14 @@ void Group_Sound (int type, int channel)
             break;
         case SHIELD_UP_WAV:
         case SHIELD_DOWN_WAV:
+        case SHIELD_UP_FED_WAV:
+        case SHIELD_UP_ROM_WAV:
+        case SHIELD_UP_KLI_WAV:
+        case SHIELD_UP_ORI_WAV:
+        case SHIELD_DOWN_FED_WAV:
+        case SHIELD_DOWN_ROM_WAV:
+        case SHIELD_DOWN_KLI_WAV:
+        case SHIELD_DOWN_ORI_WAV:
             if(!Mix_GroupChannel(channel,4))
                 LineToConsole("Mix_GroupChannel: %s\n", Mix_GetError());
             break;
@@ -433,10 +509,11 @@ extern void ChangeVolume (int vol)
     Mix_Volume(-1,volume);
 
     // Change music volume, range is 0 to 128
-    mvolume = mvolume + 10*vol;
+    /*mvolume = mvolume + 10*vol;
     if (mvolume < 0)
         mvolume = 0;
-    Mix_VolumeMusic(mvolume);
+    mvolume = MIX_MAX_VOLUME * musicVolume;
+    Mix_VolumeMusic(mvolume);*/
     
     // Change default
     soundVolume = volume;
